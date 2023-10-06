@@ -1,24 +1,24 @@
-import React from 'react';
-import './App.css';
-import CustomButton from './components/CustomButton/CustomButton';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout/Layout';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import CustomButton from "./components/CustomButton/CustomButton";
+import Layout from "./components/Layout/Layout";
+import UserSingle from "./components/Users/UserSingle";
 import About from "./pages/About";
-import Users from './components/Users/Users';
-
+import UsersView from "./pages/UsersView";
 
 function App() {
   return (
-    <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Layout />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/users" element={<Users />} />
-
-
-    </Routes>
-    </BrowserRouter>
-   
+    <div className="App">
+      <CustomButton />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/users" element={<UsersView />} />
+          <Route path="/users/:userId" element={<UserSingle />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

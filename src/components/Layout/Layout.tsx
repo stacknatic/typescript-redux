@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Link, Outlet, Link as RouterLink } from "react-router-dom";
+
 const Layout = () => {
   return (
     <div>
@@ -37,4 +38,5 @@ const Layout = () => {
     </div>
   );
 };
+
 export default Layout;
